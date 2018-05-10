@@ -15,13 +15,13 @@ public class SnakeCamelUtil {
 		StringBuilder sb = new StringBuilder();
 		int j = 0;
 		for (int i = 0; i < camelcase.length(); i++) {
-			char c = camelcase.charAt(i);
-			if (Character.isUpperCase(c)) {
-				sb.append(camelcase.substring(j, i));
+			char c = camelcase.charAt(i);//i番目を抜き出す
+			if (Character.isUpperCase(c)) {//大文字か判断
+				sb.append(camelcase.substring(j, i));//j番目とi番目の間の文字を取得
 				if (sb.length() > 0) {
 					sb.append("_");
 				}
-				sb.append(Character.toLowerCase(c));
+				sb.append(Character.toLowerCase(c));//小文字にする
 				j = i;
 			}
 		}
@@ -42,5 +42,6 @@ public class SnakeCamelUtil {
 		String rest = s.substring(1);
 		return lowerFirst + rest;
 	}
+	
 	
 }
